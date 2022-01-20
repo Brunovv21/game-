@@ -1,3 +1,6 @@
+while (true) {
+  var audio = new Audio("music/yt1s.com - Alan Silvestri  Help Arrives From Avengers Infinity WarAudio Only.mp3");
+audio.play();
 var character =
 document.getElementById("character");
 var block = document.getElementById("block");
@@ -16,30 +19,33 @@ var blockLeft =parseInt(window.getComputedStyle(block).getPropertyValue("left"))
 if(blockLeft<40 && blockLeft>0 && characterTop>=300){
   block.style.animation = "none";
   block.style.display = "none";
-  alert("you lose");
+  alert('you lose');
+window.location = 'http://127.0.0.1:5500';
 }
 },10); 
-const startBtn = document.querySelector(".startBtn");
-const canvas = document.querySelector(".canvas");
-const ctx = canvas.getContext("2d");
-startBtn.onclick = () => {
-  startBtn.style.display = "none";
-  const interval = setInterval(() => {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    switch (level) {
-      case 1:
-        bgImg1.draw();
-        checkScore(200, () => (level = 2));
-        break;
-      case 2:
-        bgImg2.draw();
-        checkScore(400, () => {
-          clearInterval(interval);
-          startBtn.style.display = "block";
-          score = 0;
-          level = 1;
-        });
-        break;
-    }
-  }, 20);
-};
+
+$(document).ready(function() {
+
+  var counters = $(".count");
+  var countersQuantity = counters.length;
+  var counter = [0];
+
+  for (i = 0; i < countersQuantity; i++) {
+    counter[i] = parseInt(counters[i].innerHTML);
+  }
+
+  var count = function(start, value, id) {
+    var localStart = start;
+    setInterval(function() {
+      if (localStart < value) {
+        localStart++;
+        counters[id].innerHTML = localStart;
+      }
+    }, 40);
+  }
+
+  for (j = 0; j < countersQuantity; j++) {
+    count(0, counter[j], j);
+  }
+});
+}

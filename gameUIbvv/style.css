@@ -3,6 +3,7 @@
   margin: 0;
 }
 #game{
+  background-image: url("images/Bluestacks.jpg");
   width: 1000px;
   height: 400px;
   border: 3px solid black
@@ -10,7 +11,7 @@
 #character{
   width:  50px;
   height: 50px;
-  background-color: blue;
+  background-color: black;
   position: relative;
   top: 350px;
 }
@@ -52,4 +53,31 @@
   padding: 10px 25px;
   border-radius: 5px;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+html,
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.count {
+  width: 60px;
+  height: 60px;
+  background: lightgray;
+  border-radius: 50%;
+  border: 1px solid gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: verdana;
+  float: left;
+  margin: 30px;
+  text-shadow: 1px 1px black;
+  -webkit-box-shadow: 0px 0px 72px -9px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 72px -9px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 72px -9px rgba(0,0,0,0.75);
 }
